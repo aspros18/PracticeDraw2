@@ -27,7 +27,9 @@ public class Practice16TextPathView extends View {
     }
 
     {
-        paint.setTextSize(120);
+        paint.setTextSize(90);
+
+        setLayerType(LAYER_TYPE_SOFTWARE, paint);
 
         // 使用 Paint.getTextPath() 来获取文字的 Path
 
@@ -39,6 +41,9 @@ public class Practice16TextPathView extends View {
         super.onDraw(canvas);
 
         canvas.drawText(text, 50, 200, paint);
+
+        paint.getTextPath(text, 0, text.length(), 50, 200, textPath);
+        canvas.translate(0, 200);
 
         canvas.drawPath(textPath, pathPaint);
     }

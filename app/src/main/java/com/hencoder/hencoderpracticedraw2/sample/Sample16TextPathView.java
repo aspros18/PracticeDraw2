@@ -27,7 +27,9 @@ public class Sample16TextPathView extends View {
     }
 
     {
-        paint.setTextSize(120);
+        setLayerType(LAYER_TYPE_SOFTWARE, paint);
+
+        paint.setTextSize(90);
         paint.getTextPath(text, 0, text.length(), 50, 400, textPath);
 
         pathPaint.setStyle(Paint.Style.STROKE);
